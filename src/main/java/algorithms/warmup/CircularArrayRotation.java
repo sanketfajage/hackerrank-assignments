@@ -7,9 +7,14 @@ import java.util.Scanner;
 
 public class CircularArrayRotation {
 
-    /*// Complete the circularArrayRotation function below.
+    // Complete the circularArrayRotation function below.
     private static int[] circularArrayRotation(int[] a, int k, int[] queries) {
-
+        k = k % a.length;
+        int[] result = new int[queries.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = a[(queries[i] - k + a.length) % a.length];
+        }
+        return result;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -54,10 +59,7 @@ public class CircularArrayRotation {
             }
 
             bufferedWriter.newLine();
-
-            bufferedWriter.close();
         }
-
         scanner.close();
-    }*/
+    }
 }
